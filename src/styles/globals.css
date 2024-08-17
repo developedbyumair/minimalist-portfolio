@@ -87,40 +87,6 @@
   }
 }
 
-*::-webkit-scrollbar {
-  width: 0.2rem;
-}
-
-#tab-section::-webkit-scrollbar {
-  background: transparent;
-  width: 0.2rem;
-  opacity: 0;
-}
-
-#tab-section:hover::-webkit-scrollbar-thumb {
-  background: hsl(var(--accent));
-}
-
-#tab-section::-webkit-scrollbar-track {
-  background: transparent;
-  margin-block: 0.5rem;
-  border-radius: 100vw;
-}
-
-#tab-section::-webkit-scrollbar-thumb {
-  border-radius: 25vw;
-}
-
-::-moz-selection {
-  color: hsl(var(--background));
-  background: hsl(var(--foreground));
-}
-
-::selection {
-  color: hsl(var(--background));
-  background: hsl(var(--foreground));
-}
-
 /* Tailwind style */
 .head-text {
   @apply font-heading text-4xl font-extrabold leading-[1.15] sm:text-7xl md:text-6xl;
