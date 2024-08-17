@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "#site/content": ["./.velite"],
       "#velite": ["./velite.config.ts"]
     }
   },
