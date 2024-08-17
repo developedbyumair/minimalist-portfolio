@@ -32,6 +32,10 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
 
+    --nav-item-shadow: rgba(0, 0, 0, 0.15);
+    --nav-item-current: rgba(0, 0, 0, 0.08);
+    --nav-container-shadow: rgba(0, 0, 0, 0.02);
+
     --radius: 0.5rem;
   }
 
@@ -63,6 +67,10 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+
+    --nav-item-shadow: rgba(152, 150, 150, 0.15);
+    --nav-item-current: rgba(144, 144, 144, 0.08);
+    --nav-container-shadow: rgba(141, 141, 141, 0.02);
   }
 }
 
@@ -71,6 +79,81 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+    height: 100%;
   }
+}
+
+*::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+#tab-section::-webkit-scrollbar {
+  background: transparent;
+  width: 0.2rem;
+  opacity: 0;
+}
+
+#tab-section:hover::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent));
+}
+
+#tab-section::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 0.5rem;
+  border-radius: 100vw;
+}
+
+#tab-section::-webkit-scrollbar-thumb {
+  border-radius: 25vw;
+}
+
+::-moz-selection {
+  color: hsl(var(--background));
+  background: hsl(var(--foreground));
+}
+
+::selection {
+  color: hsl(var(--background));
+  background: hsl(var(--foreground));
+}
+
+/* Tailwind style */
+.head-text {
+  @apply font-heading text-4xl font-extrabold leading-[1.15] sm:text-7xl md:text-6xl;
+}
+
+.head-text-md {
+  @apply font-heading text-3xl font-extrabold leading-[1.15] sm:text-5xl;
+}
+
+.head-text-sm {
+  @apply font-heading text-2xl font-extrabold leading-[1.15] sm:text-4xl;
+}
+
+.social-link {
+  @apply flex h-8 w-8 items-center justify-center rounded border transition-all duration-100 ease-in-out hover:border-[0.2px] hover:border-b-4 hover:border-primary/30 active:scale-[0.97] active:border-b;
+}
+
+.pebble {
+  @apply transform-gpu border border-transparent transition-all duration-100 ease-in-out hover:border-b-4 hover:border-primary/30 active:scale-[0.97] active:border-b;
+}
+
+.nav-item {
+  box-shadow: 0px -3px 2px var(--nav-item-shadow) inset;
+}
+
+.current {
+  box-shadow:
+    0px 2px 5px var(--nav-item-current) inset,
+    0px -1px 0.5px var(--nav-item-current) inset;
+}
+
+.nav-container {
+  box-shadow:
+    1px 5px 5px var(--nav-container-shadow),
+    -1px 5px 5px var(--nav-container-shadow);
 }

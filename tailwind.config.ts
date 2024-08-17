@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
-// import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss"
 
-// const { fontFamily } = require("tailwindcss/defaultTheme")
+const { fontFamily } = require("tailwindcss/defaultTheme")
 
 module.exports = {
   darkMode: ["class"],
@@ -62,6 +62,11 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        heading: ["var(--font-heading)", ...fontFamily.sans],
+        mono: ["var(--font-geist-mono)", ...fontFamily.mono],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -76,7 +81,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      screens: {
+        tablet: "1110px",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+} satisfies Config
